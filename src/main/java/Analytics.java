@@ -19,11 +19,38 @@ public class Analytics {
 //    public int getRun() {
 //        return run;
 //    }
-    private static final Analytics analytics = new Analytics();
 
-    private Analytics(){}
+    //Non-static field 'analytics' cannot be referenced from a static context
+    //static field
+
+    //incorrect
+   /*
+   private Analytics analytics = new Analytics();
+
+    public Analytics(){}
 
     public static Analytics getAnalytics(){
+       return analytics;
+    }
+    */
+
+    //correct
+    /*
+    private static Analytics analytics = new Analytics();
+
+    public Analytics(){}
+
+    public static Analytics getAnalytics(){
+        return analytics;
+    }
+*/
+    //correct
+    private static Analytics analytics = new Analytics();
+
+    private Analytics() {
+    }//making it private will ensure that there will be no other object created outside this class
+
+    public static Analytics getAnalytics() {
         return analytics;
     }
 
