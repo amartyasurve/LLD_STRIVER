@@ -45,12 +45,16 @@ public class Analytics {
     }
 */
     //correct
-    private static Analytics analytics = new Analytics();
+    private static Analytics analytics;
 
     private Analytics() {
     }//making it private will ensure that there will be no other object created outside this class
 
     public static Analytics getAnalytics() {
+        if (analytics == null) {
+            analytics = new Analytics();
+            return analytics;
+        }
         return analytics;
     }
 

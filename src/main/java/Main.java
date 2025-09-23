@@ -12,8 +12,9 @@ public class Main {
         Analytics analytics1=Analytics.getAnalytics();
         Analytics analytics2=Analytics.getAnalytics();
         Analytics analytics3=Analytics.getAnalytics();
-
         System.out.println(analytics1);
+//        Analytics analytics4=new Analytics(Analytics.analytics);
+
         System.out.println(analytics2);
         System.out.println(analytics3);
         System.out.println(Analytics.getAnalytics());
