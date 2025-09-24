@@ -50,7 +50,8 @@ public class Analytics {
     private Analytics() {
     }//making it private will ensure that there will be no other object created outside this class
 
-    public static Analytics getAnalytics() {
+    //synchronized is makes the lazy loading thread safe but it also make it inefficient
+    public static synchronized Analytics getAnalytics() {
         if (analytics == null) {
             analytics = new Analytics();
             return analytics;
