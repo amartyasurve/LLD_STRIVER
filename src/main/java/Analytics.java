@@ -45,18 +45,21 @@ public class Analytics {
     }
 */
     //correct
-    private static Analytics analytics;
+    private static volatile Analytics analytics;
 
     private Analytics() {
-    }//making it private will ensure that there will be no other object created outside this class
+    }
 
-    //synchronized is makes the lazy loading thread safe but it also make it inefficient
-    public static synchronized Analytics getAnalytics() {
+    public static Analytics getInstance() {
         if (analytics == null) {
-            analytics = new Analytics();
-            return analytics;
+            synchronized (Analytics.class) {
+                if (analytics == null) {
+                    analytics=new Analytics();
+                }
+            }
         }
         return analytics;
     }
+
 
 }

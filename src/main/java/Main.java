@@ -9,15 +9,15 @@ public class Main {
         //execution
 //        Analytics analytics1=new Analytics();//in this way we cannot create the object as the constructor is private
 //        Analytics analytics2=new Analytics();//same class has two different instances this not single ton
-        Analytics analytics1=Analytics.getAnalytics();
-        Analytics analytics2=Analytics.getAnalytics();
-        Analytics analytics3=Analytics.getAnalytics();
+        Analytics analytics1=Analytics.getInstance();
+        Analytics analytics2=Analytics.getInstance();
+        Analytics analytics3=Analytics.getInstance();
         System.out.println(analytics1);
 //        Analytics analytics4=new Analytics(Analytics.analytics);
 
         System.out.println(analytics2);
         System.out.println(analytics3);
-        System.out.println(Analytics.getAnalytics());
+        System.out.println(Analytics.getInstance());
 
         // this is  not a single ton pattern
 
