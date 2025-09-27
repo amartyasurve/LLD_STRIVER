@@ -1,27 +1,16 @@
-import singleton.lazyloading.billpugh.Analytics;
+import factorypattern.withFactoryPattern.LogisticService;
+import factorypattern.withoutFactoryPattern.Logistics;
 
 public class Main {
     public static void main(String[] args) {
-        //concept
-//        singleton.lazyloading.lazyloading.Analytics analytics1; // Just a reference
-//        analytics1 = new singleton.lazyloading.lazyloading.Analytics(); // Now it points to an object
-//        analytics1.analyze();         // Safe to call now
+        LogisticService logisticService=new LogisticService();
+        logisticService.send("Road");
 
-
-        //execution
-//        singleton.lazyloading.lazyloading.Analytics analytics1=new singleton.lazyloading.lazyloading.Analytics();//in this way we cannot create the object as the constructor is private
-//        singleton.lazyloading.lazyloading.Analytics analytics2=new singleton.lazyloading.lazyloading.Analytics();//same class has two different instances this not single ton
-        Analytics analytics1=Analytics.getInstance();
-        Analytics analytics2=Analytics.getInstance();
-        Analytics analytics3=Analytics.getInstance();
-        System.out.println(analytics1);
-//        singleton.lazyloading.lazyloading.Analytics analytics4=new singleton.lazyloading.lazyloading.Analytics(singleton.lazyloading.lazyloading.Analytics.analytics);
-
-        System.out.println(analytics1);
-        System.out.println(analytics1);
-        System.out.println(Analytics.getInstance());
-
-        // this is  not a single ton pattern
-
+        /*Without factory pattern*/
+        /*
+        * The problem  here is in logistic service
+        * the purpose of logistic service is to send the logistic but instead it is dealing with creation
+        * of object of either airlogistic or road logisctics
+        * */
     }
 }
