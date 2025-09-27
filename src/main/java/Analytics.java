@@ -45,20 +45,17 @@ public class Analytics {
     }
 */
     //correct
-    private static volatile Analytics analytics;
+//    private static volatile Analytics analytics;
 
     private Analytics() {
     }
 
-    public static Analytics getInstance() {
-        if (analytics == null) {
-            synchronized (Analytics.class) {
-                if (analytics == null) {
-                    analytics=new Analytics();
-                }
-            }
-        }
-        return analytics;
+    private static class Holder{
+        private static final Analytics analytics=new Analytics();
+    }
+
+    public  static Analytics getInstance(){
+        return Holder.analytics;
     }
 
 

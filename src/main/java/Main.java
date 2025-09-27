@@ -15,8 +15,8 @@ public class Main {
         System.out.println(analytics1);
 //        Analytics analytics4=new Analytics(Analytics.analytics);
 
-        System.out.println(analytics2);
-        System.out.println(analytics3);
+        System.out.println(analytics1);
+        System.out.println(analytics1);
         System.out.println(Analytics.getInstance());
 
         // this is  not a single ton pattern
