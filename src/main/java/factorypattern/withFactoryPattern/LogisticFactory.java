@@ -10,6 +10,9 @@ public class LogisticFactory {
         } else if (Objects.equals(mode, "Road")) {
             return new RoadLogistics();
         }
+        else if (mode=="Train"){
+            return new TrainLogistics();
+        }
         return null;
     }
 

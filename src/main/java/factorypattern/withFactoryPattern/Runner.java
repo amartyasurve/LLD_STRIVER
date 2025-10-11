@@ -8,6 +8,6 @@ public class Runner {
         * i Have one imaginary package
         * */
         LogisticService logisticService=new LogisticService();
-        logisticService.send("Road");
+        logisticService.send("Train");
     }
 }
