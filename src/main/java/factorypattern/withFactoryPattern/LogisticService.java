@@ -14,6 +14,7 @@ public class LogisticService {
         //with static keyword
         Logistics logistics = LogisticFactory.getInstance(mode);
         try {
+            assert logistics != null;
             logistics.send();
         } catch (Exception e) {
             throw new RuntimeException(e);
