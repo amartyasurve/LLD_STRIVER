@@ -10,6 +10,8 @@ public class CountryFactor {
         else if (Objects.equals(mode, "USA")){
             return new UsaPaymentFactory();
         }
+        else if (mode=="UK")
+            return new LondonPaymentFactory();
         return null;
     }
 }
