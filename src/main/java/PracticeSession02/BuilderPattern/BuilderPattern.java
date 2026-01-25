@@ -63,11 +63,11 @@ class Order{
             this.discountCode=discountCode;
             return this;
         }
-        public OrderBuilder isGiftWrap(boolean giftWrap){
+        public OrderBuilder withGiftWrap(boolean giftWrap){
             this.giftWrap=giftWrap;
             return this;
         }
-        public OrderBuilder isPriorityDelivery(boolean priorityDelivery){
+        public OrderBuilder withPriorityDelivery(boolean priorityDelivery){
             this.priorityDelivery=priorityDelivery;
             return this;
         }
@@ -104,7 +104,7 @@ public class BuilderPattern {
     public static void main(String[] args){
       Order order1=new Order.OrderBuilder("123","452").addShippingAddress("Pune").build();
       Order order2=new Order.OrderBuilder("565","456").addShippingAddress("Mumbai").build();
-      Order order3=new Order.OrderBuilder("867","457").isPriorityDelivery(true).addShippingAddress("latur").build();
+      Order order3=new Order.OrderBuilder("867","457").withPriorityDelivery(true).addShippingAddress("latur").build();
       Order order4=new Order.OrderBuilder("902","458").addShippingAddress("London").build();
 //      Order order2=new Order(new Order.OrderBuilder("9009","342"));
         System.out.println(order1.toString());
