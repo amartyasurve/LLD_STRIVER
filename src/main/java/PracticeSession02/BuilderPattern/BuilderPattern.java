@@ -51,15 +51,15 @@ class Order{
             this.customerId=customerId;
         }
 
-        public OrderBuilder addShippingAddress(String shippingAddress){
+        public OrderBuilder withShippingAddress(String shippingAddress){
             this.shippingAddress=shippingAddress;
             return this;
         }
-        public OrderBuilder addBillingAddress(String billingAddress){
+        public OrderBuilder withBillingAddress(String billingAddress){
             this.billingAddress=billingAddress;
             return this;
         }
-        public OrderBuilder addDiscountCode(String discountCode){
+        public OrderBuilder withDiscountCode(String discountCode){
             this.discountCode=discountCode;
             return this;
         }
@@ -72,7 +72,7 @@ class Order{
             return this;
         }
 
-        public OrderBuilder addDeliveryInstruction(String deliveryInstructions){
+        public OrderBuilder withDeliveryInstruction(String deliveryInstructions){
             this.deliveryInstructions=deliveryInstructions;
             return this;
         }
@@ -102,10 +102,10 @@ class Order{
 * */
 public class BuilderPattern {
     public static void main(String[] args){
-      Order order1=new Order.OrderBuilder("123","452").addShippingAddress("Pune").build();
-      Order order2=new Order.OrderBuilder("565","456").addShippingAddress("Mumbai").build();
-      Order order3=new Order.OrderBuilder("867","457").withPriorityDelivery(true).addShippingAddress("latur").build();
-      Order order4=new Order.OrderBuilder("902","458").addShippingAddress("London").build();
+      Order order1=new Order.OrderBuilder("123","452").withShippingAddress("Pune").build();
+      Order order2=new Order.OrderBuilder("565","456").withShippingAddress("Mumbai").build();
+      Order order3=new Order.OrderBuilder("867","457").withPriorityDelivery(true).withShippingAddress("latur").build();
+      Order order4=new Order.OrderBuilder("902","458").withShippingAddress("London").build();
 //      Order order2=new Order(new Order.OrderBuilder("9009","342"));
         System.out.println(order1.toString());
         System.out.println(order2.toString());
